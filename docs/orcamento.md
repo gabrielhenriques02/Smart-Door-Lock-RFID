@@ -2,7 +2,7 @@
 
 | Componente | Qtd | Valor Unit. (R$) | Valor Total (R$) | Loja / Link | Status | Observações |
 | :--- | :---: | :---: | :---: | :--- | :---: | :--- |
-| Adaptadores macho/femea | 20 | 19,93 | 19,93 | [Mercado Livre](https://www.mercadolivre.com.br/kit-10-borne-p4-macho--10-borne-p4-femea-cftv-fita-de-led-p/up/MLBU3361941949?pdp_filters=item_id:MLB5588030518#polycard_client=cart_list&wid=MLB5588030518&sid=cart) | Em Análise | adaptador para a alimentação 12V |
+| Adaptadores macho/femea | 20 | 0,99 | 19,93 | [Mercado Livre](https://www.mercadolivre.com.br/kit-10-borne-p4-macho--10-borne-p4-femea-cftv-fita-de-led-p/up/MLBU3361941949?pdp_filters=item_id:MLB5588030518#polycard_client=cart_list&wid=MLB5588030518&sid=cart) | Em Análise | adaptador para a alimentação 12V |
 | Módulo Leitor RFID RC522 | 1 | 18,55 | 18,55 | [Mercado Livre](https://www.mercadolivre.com.br/p/MLB2039719370?pdp_filters=item_id%3AMLB2734248644&sid=cart#polycard_client=cart_list&wid=MLB2734248644&sid=cart) | Em Análise | Acompanha tag e cartão |
 | Fechadura Solenoide 12V | 1 | 40,74 | 40,74 | [Mercado Livre](https://www.mercadolivre.com.br/mini-fechadura-solenoide-eletronica-trinco-trava-12v-arduino/up/MLBU801652385?pdp_filters=item_id:MLB4891095416#polycard_client=cart_list&wid=MLB4891095416&sid=cart) | Em Análise | fechadura para a maquete |
 | Fonte Chaveada 12V 2A | 1 | 13,95 | 13,95 | [Mercado Livre](https://www.mercadolivre.com.br/fonte-de-alimentacao-12v-2a-bivolt-acdc--adapter/up/MLBU1420753900?pdp_filters=item_id:MLB1797347842#polycard_client=cart_list&wid=MLB1797347842&sid=cart) | Em Análise | Para alimentação da fechadura |
