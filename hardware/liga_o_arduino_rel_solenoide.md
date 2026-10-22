@@ -51,6 +51,4 @@ A solenoide é uma bobina: ao ser desligada, gera um pico de tensão reversa que
 | :--- | :--- | :--- |
 | **Adaptação fonte 12V** | 2 | M/M |
 | **Relé - protoboard** | 3 | M/F |
-| **solenoide - relé** | 2 | M/M## 1. Tabela de Pinagem
-
-| Pino no  |
+| **solenoide - relé** | 2 | M/M |
