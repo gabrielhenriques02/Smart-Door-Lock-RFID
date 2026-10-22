@@ -23,3 +23,10 @@ Guia de fiação e pinagem entre o microcontrolador Arduino Uno e o módulo leit
 - Utilize jumpers fêmea-macho para ligar o RC522 diretamente à protoboard ou ao Arduino.
 - Certifique-se de que a barra de pinos do RC522 esteja bem soldada para evitar falhas intermitentes de comunicação via SPI.
 - Mantenha os fios o mais curtos possível para minimizar ruídos no sinal.
+
+## 3. Lista Jumpers
+
+| Tipo do Jumper | Quantidade |
+| :--- | :--- |
+| **M/M** | 7 |
+| **M/F** | 0 |
