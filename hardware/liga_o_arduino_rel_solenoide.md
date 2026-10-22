@@ -44,3 +44,13 @@ A solenoide é uma bobina: ao ser desligada, gera um pico de tensão reversa que
 ## 4. Alimentação do Conjunto
 - Conecte o plug P4 da fonte de 12V ao conector Jack DC do Arduino Uno para alimentar a placa com segurança (o regulador interno rebaixa para 5V/3.3V).
 - Derive a linha de 12V em paralelo para alimentar a etapa de potência da trava.
+
+## 5. Lista Jumpers
+
+| Tipo do Jumper | Quantidade | Ligação |
+| :--- | :--- | :--- |
+| **Adaptação fonte 12V** | 2 | M/M |
+| **Relé - protoboard** | 3 | M/F |
+| **solenoide - relé** | 2 | M/M## 1. Tabela de Pinagem
+
+| Pino no  |
