@@ -23,5 +23,5 @@ Guia de fiação entre o Arduino Uno e o módulo Display LCD 16x2 com adaptador 
 
 | Tipo do Jumper | Quantidade |
 | :--- | :--- |
-| **M/M** | 7 |
-| **M/F** | 0 |
+| **M/M** | 2 |
+| **M/F** | 4 |
