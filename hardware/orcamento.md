@@ -9,6 +9,7 @@
 | Módulo relé 5V | 1 | 11,97 | 11,97 | [Eletrogate](https://www.eletrogate.com/?utm_source=google&utm_medium=cpc&utm_campaign=[MC4]_[G]_[Search]_Institucional&utm_content=666364855884&utm_term=eletrogate&gad_source=1&gad_campaignid=1843381086&gbraid=0AAAAADqxjs_5hghFDGjU7CrDjaRnLcalU&gclid=CjwKCAjw_pzWBhAkEiwAwDCi1Uc7sMKi90hu8dlebPzL1ErNx2yRPfS84SSRq32LFd0ScFOhI8v6VhoCJ-AQAvD_BwE) | Aguardando Entrega | alimenatar a fechadura |
 | Display LCD 16x2 | 1 | 23,71 | 23,71 | [Eletrogate](https://www.eletrogate.com/?utm_source=google&utm_medium=cpc&utm_campaign=[MC4]_[G]_[Search]_Institucional&utm_content=666364855884&utm_term=eletrogate&gad_source=1&gad_campaignid=1843381086&gbraid=0AAAAADqxjs_5hghFDGjU7CrDjaRnLcalU&gclid=CjwKCAjw_pzWBhAkEiwAwDCi1Uc7sMKi90hu8dlebPzL1ErNx2yRPfS84SSRq32LFd0ScFOhI8v6VhoCJ-AQAvD_BwE) | Aguardando Entrega | Tela para mostrar o statusa da tranca |
 | Diodo 1N4007 | 1 | — | — | — | A comprar | Proteção flyback da solenoide (ver `liga_o_arduino_rel_solenoide.md`) |
+| Módulo adaptador I2C display LCD 16x2 | 1 | — | — | — | A comprar | Reduzir a quantidade e simplificar a ligação da placa LCD com o arduino  |
 
 **Total Estimado:** R$ 128,85 *(soma dos itens com preço)*
 **Última atualização:** Outubro/2026
