@@ -28,5 +28,5 @@ Guia de fiação e pinagem entre o microcontrolador Arduino Uno e o módulo leit
 
 | Tipo do Jumper | Quantidade |
 | :--- | :--- |
-| **M/M** | 7 |
-| **M/F** | 0 |
+| **M/M** | 0 |
+| **M/F** | 7 |
