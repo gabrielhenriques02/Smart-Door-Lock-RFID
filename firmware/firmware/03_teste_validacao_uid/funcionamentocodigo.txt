@@ -1,0 +1,49 @@
+====================================================================
+03 - LEITURA DE UID E TESTE DE VALIDACAO (BANCADA / MONITOR SERIAL)
+Projeto: Smart-Door-Lock-RFID (Fechadura Eletronica de Cofre)
+====================================================================
+
+1. OBJETIVO DO CODIGO
+Sketch intermediario utilizado nos testes de bancada para ler o UID
+do cartao aproximado, exibi-lo formatado no Monitor Serial e testar
+a logica de autorizacao de acesso antes de ligar o rele e a trava
+solenoide de 12V.
+
+2. COMO FUNCIONA
+- Inicializacao (setup):
+  Inicia a comunicacao serial a 9600 bps, ativa o barramento SPI e
+  inicializa o leitor MFRC522.
+
+- Leitura e Formatacao do UID (loop):
+  Aguarda um cartao (PICC_IsNewCardPresent), le seus 4 bytes
+  (PICC_ReadCardSerial) e monta uma String em letras maiusculas
+  (idLido). Diferente do leitor basico, este codigo verifica se o
+  byte e menor que 0x10 (16 em decimal) e adiciona um "0" a esquerda
+  (exemplo: "D5 D6 3 7" passa a ser "D5 D6 03 07").
+
+- Validacao de Acesso:
+  Imprime o valor capturado ("ID Lido: ...") no Monitor Serial e o
+  compara com a constante UID_AUTORIZADO, retornando no terminal:
+  * "Status: ACESSO CONCEDIDO!" (se o cartao coincidir)
+  * "Status: ACESSO NEGADO!" (se for outro cartao)
+
+- Encerramento do Ciclo:
+  Chama mfrc522.PICC_HaltA() para colocar a tag em espera ate que
+  ela seja afastada e aguarda 1000 ms antes da proxima leitura.
+
+3. PINAGEM (RFID-RC522 -> ARDUINO UNO)
+Este teste utiliza apenas o leitor RFID conectado ao Arduino:
+- 3.3V     -> 3.3V (nao ligar em 5V)
+- RST      -> D9
+- GND      -> GND
+- MISO     -> D12
+- MOSI     -> D11
+- SCK      -> D13
+- SDA (SS) -> D10
+
+4. PASSO A PASSO DE USO
+1) Instale a biblioteca MFRC522 na Arduino IDE.
+2) Envie o arquivo 03_teste_validacao_uid.ino para o Arduino Uno.
+3) Abra o Monitor Serial (Ctrl + Shift + M) em 9600 baud.
+4) Aproxime um cartao autorizado e um nao autorizado para conferir
+   o ID lido e a resposta de validacao na tela.
