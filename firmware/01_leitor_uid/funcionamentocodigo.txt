@@ -1,0 +1,48 @@
+====================================================================
+01 - LEITOR DE UID (TAG SCAN)
+Projeto: Smart-Door-Lock-RFID (Fechadura Eletronica de Cofre)
+====================================================================
+
+1. OBJETIVO DO CODIGO
+Este sketch auxiliar serve para descobrir o identificador unico (UID)
+de cartoes e chaveiros RFID de 13,56 MHz antes de programar o codigo
+definitivo da fechadura.
+
+2. COMO FUNCIONA
+- Inicializacao (setup):
+  Inicia a comunicacao serial com o computador a 9600 bps e ativa o
+  barramento SPI junto ao leitor MFRC522.
+
+- Leitura do Cartao (loop):
+  Aguarda a aproximacao de uma tag (PICC_IsNewCardPresent) e le seu
+  numero de serie (PICC_ReadCardSerial). Em seguida, percorre os 4
+  bytes armazenados em mfrc522.uid.uidByte[0..3] e imprime cada um em
+  formato hexadecimal no Monitor Serial.
+
+- Encerramento do Ciclo:
+  Chama mfrc522.PICC_HaltA() para colocar o cartao em espera ate que
+  ele seja afastado fisicamente do sensor.
+
+3. OBSERVACAO SOBRE ZEROS A ESQUERDA
+A funcao Serial.print(valor, HEX) do Arduino omite o zero a esquerda
+em bytes menores que 0x10 (16 em decimal). Exemplo:
+  Bytes reais no chip:   D5  D6  03  07
+  Saida no Monitor:      D5 D6 3 7
+
+Copie o valor exatamente como aparecer no Monitor Serial para colar
+na variavel UID_AUTORIZADO do codigo 02_fechadura_cofre.ino.
+
+4. PINAGEM (RFID-RC522 -> ARDUINO UNO)
+- 3.3V     -> 3.3V (nao ligar em 5V)
+- RST      -> D9
+- GND      -> GND
+- MISO     -> D12
+- MOSI     -> D11
+- SCK      -> D13
+- SDA (SS) -> D10
+
+5. PASSO A PASSO DE USO
+1) Instale a biblioteca MFRC522 na Arduino IDE.
+2) Envie o arquivo 01_leitor_uid.ino para o Arduino Uno.
+3) Abra o Monitor Serial (Ctrl + Shift + M) em 9600 baud.
+4) Aproxime o cartao do leitor e anote o codigo hexadecimal exibido.
