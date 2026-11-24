@@ -1,0 +1,55 @@
+====================================================================
+02 - FECHADURA ELETRONICA DO COFRE (CONTROLE DE ACESSO)
+Projeto: Smart-Door-Lock-RFID
+====================================================================
+
+1. OBJETIVO DO CODIGO
+Firmware definitivo embarcado no Arduino Uno para controlar o acesso
+do cofre de forma autonoma, validando o UID do cartao RFID e
+acionando a trava solenoide de 12V por meio de um modulo rele.
+
+2. CARACTERISTICAS DESTA VERSAO
+- Operacao Autonoma:
+  Funciona sem display LCD e sem conexao com o computador (comandos
+  de Monitor Serial removidos para uso direto na fonte externa).
+
+- Abertura Temporizada (3 segundos):
+  Ao reconhecer um cartao autorizado, destranca o cofre por 3
+  segundos e tranca novamente de forma automatica.
+
+- Logica para Rele Low-Level Trigger:
+  O pino D7 permanece em HIGH (5V) em repouso para manter o rele
+  desligado e vai para LOW (0V) apenas durante o destravamento.
+
+- Protecao contra Ruido Eletrico:
+  Reinicializa o leitor (mfrc522.PCD_Init) ao final de cada ciclo
+  para evitar travamentos na comunicacao SPI causados pelo pulso
+  eletromagnetico da bobina da solenoide de 12V.
+
+3. FLUXO DE EXECUCAO
+1) setup(): Define o pino D7 (RELAY_PIN) como saida em nivel HIGH
+   (cofre trancado) e inicializa o barramento SPI e o sensor RFID.
+2) loop(): Aguarda um cartao, concatena os 4 bytes lidos em uma
+   String em letras maiusculas (idLido) e compara com UID_AUTORIZADO.
+3) Acionamento: Se o UID coincidir, envia LOW no pino D7 por 3000 ms
+   (3 segundos) para recolher a trava solenoide e retorna para HIGH.
+4) Seguranca: Executa PICC_HaltA() (exige afastar o cartao antes de
+   nova leitura), reinicia o leitor com PCD_Init() e aguarda 1000 ms.
+
+4. ESQUEMA DE LIGACOES
+
+[Leitor RFID-RC522 -> Arduino Uno]
+- 3.3V -> 3.3V | RST -> D9  | GND -> GND
+- MISO -> D12  | MOSI -> D11 | SCK -> D13 | SDA (SS) -> D10
+
+[Modulo Rele 5V Low-Level Trigger -> Arduino Uno]
+- VCC -> 5V
+- GND -> GND
+- IN  -> D7
+
+[Circuito de Potencia 12V -> Rele e Solenoide]
+- Positivo (+12V) da Fonte     -> Borne COM (Common) do rele
+- Positivo (+12V) da Solenoide -> Borne NO (Normally Open) do rele
+- Negativo (-12V / GND)        -> Ligado diretamente ao negativo da
+                                  solenoide e ao GND comum
+- Borne NC (Normally Closed)   -> Desconectado
